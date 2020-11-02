@@ -1,4 +1,6 @@
 from amir import create_map
+from mada import shoot_at_coordinates
+from diana import mark_ship_on_map, display_enemy_map
 from iulia import read_coordinates
 from madi import display_game_map, place_ships_on_map, ship_has_no_more_lives, has_lost
 
@@ -20,6 +22,17 @@ def mark_ship_on_map(game_map, ship, x_axis, y_axis):
         return game_map
 
 
+def display_game_map(game_map):
+    for x in range(65, 70):
+        print("  " + chr(x) + " ", end="")
+    print()
+    for row in range(5):
+        print((row + 1), end=" ")
+        for col in range(5):
+            print(f" {game_map[row][col]}" + " | ", end="")
+        print("\n " + "----+" * 5)
+
+
 def mark_whole_ship_as_dead(game_map, x_axis, y_axis):
 
     pass
@@ -30,36 +43,6 @@ def display_current_player_turn(current_player_map, player_one_map):
         print("=== PLAYER 1 IS SHOOTING NOW ===")
     else:
         print("=== PLAYER 2 IS SHOOTING NOW ===")
-
-
-def shoot_at_coordinates(game_map, x_axis, y_axis):
-    if game_map[y_axis][x_axis] == representation_water_on_map:
-        game_map[y_axis][x_axis] = representation_miss_on_map
-        print("YOU HAVE MISSED.")
-        return
-    if game_map[y_axis][x_axis] == representation_intact_ship_on_map:
-        if ship_has_no_more_lives(game_map, x_axis, y_axis):
-            mark_whole_ship_as_dead(game_map, x_axis, y_axis)
-            print("YOU HAVE SUNK A SHIP")
-        else:
-            game_map[y_axis][x_axis] = representation_hit_ship_on_map
-            print("YOU HAVE HIT A SHIP")
-        return
-    print("YOU HAVE HIT A PLACE THAT WAS ALREADY HIT")
-
-
-def display_enemy_map(game_map):
-    for row in game_map:
-        print("")
-        for cell in row:
-            if cell == representation_miss_on_map:
-                print("M", end="")
-            elif cell == representation_hit_ship_on_map:
-                print("H", end="")
-            elif cell == representation_intact_ship_on_map:
-                print("0", end="")
-            elif cell == representation_water_on_map:
-                print("0", end="")
 
 
 def start():
