@@ -1,5 +1,5 @@
 import random
-from amir import create_map
+from amir import create_map, read_coordinates
 
 # generating random numbers to place the ship
 # row = random.randint(0, 5)
@@ -13,9 +13,6 @@ representation_water_on_map = 0
 representation_miss_on_map = 3
 representation_intact_ship_on_map = 1
 representation_hit_ship_on_map = 2
-
-
-
 
 
 def read_coordinates():
