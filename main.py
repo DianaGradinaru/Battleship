@@ -2,24 +2,15 @@ from amir import create_map
 from mada import shoot_at_coordinates
 from diana import mark_ship_on_map, display_enemy_map
 from iulia import read_coordinates
-from madi import display_game_map
+from madi import display_game_map, place_ships_on_map, ship_has_no_more_lives, has_lost
 
 
-# generating random numbers to place the ship
-# row = random.randint(0, 5)
-# col = random.randint(0, 5)
-# # generating random location point for horizental and vertical
-# randomnumber = random.randint(0, 1)
-# letters and numbers for the table
 ships_for_player1 = [2, 1]
 ships_for_player2 = [2, 1]
 representation_water_on_map = 0
 representation_miss_on_map = 3
 representation_intact_ship_on_map = 1
 representation_hit_ship_on_map = 2
-
-
-
 
 
 def mark_ship_on_map(game_map, ship, x_axis, y_axis):
@@ -29,21 +20,6 @@ def mark_ship_on_map(game_map, ship, x_axis, y_axis):
 
         game_map[y_axis][x_axis] = representation_intact_ship_on_map
         return game_map
-
-    # for sh in game_map:
-    #     x_axis, y_axis = sh
-    #     if sh:
-    #         ch = "X"
-    #     else:
-    #         ch = "0"
-    #     game_map[x_axis][y_axis] = ch
-
-    # if board[row][col] == "0":
-    #     if ship == 1:
-    #         board[row][col] = "X"
-    #     elif ship == 2:
-    #         board[row][col] = "Y"
-    # return
 
 
 def display_game_map(game_map):
@@ -57,24 +33,9 @@ def display_game_map(game_map):
         print("\n " + "----+" * 5)
 
 
-def ship_has_no_more_lives(game_map, x_axis, y_axis):
-
-    pass
-
-
 def mark_whole_ship_as_dead(game_map, x_axis, y_axis):
 
     pass
-
-
-def place_ships_on_map(ships):
-    game_map = create_map()
-    for ship in ships:
-        [x_axis, y_axis] = read_coordinates()
-
-        mark_ship_on_map(game_map, ship, x_axis, y_axis)
-        display_game_map(game_map)
-    return game_map
 
 
 def display_current_player_turn(current_player_map, player_one_map):
@@ -82,14 +43,6 @@ def display_current_player_turn(current_player_map, player_one_map):
         print("=== PLAYER 1 IS SHOOTING NOW ===")
     else:
         print("=== PLAYER 2 IS SHOOTING NOW ===")
-
-
-
-
-
-
-def has_lost(map):
-    pass
 
 
 def start():
