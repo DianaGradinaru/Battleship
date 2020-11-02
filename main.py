@@ -1,4 +1,5 @@
 from amir import create_map
+from mada import shoot_at_coordinates
 from diana import mark_ship_on_map, display_enemy_map
 from iulia import read_coordinates
 from madi import display_game_map
@@ -19,6 +20,41 @@ representation_hit_ship_on_map = 2
 
 
 
+
+
+def mark_ship_on_map(game_map, ship, x_axis, y_axis):
+    for n in range(5):
+        if game_map[y_axis][x_axis] == representation_intact_ship_on_map:
+            print("That spot already has a battleship in it!")
+
+        game_map[y_axis][x_axis] = representation_intact_ship_on_map
+        return game_map
+
+    # for sh in game_map:
+    #     x_axis, y_axis = sh
+    #     if sh:
+    #         ch = "X"
+    #     else:
+    #         ch = "0"
+    #     game_map[x_axis][y_axis] = ch
+
+    # if board[row][col] == "0":
+    #     if ship == 1:
+    #         board[row][col] = "X"
+    #     elif ship == 2:
+    #         board[row][col] = "Y"
+    # return
+
+
+def display_game_map(game_map):
+    for x in range(65, 70):
+        print("  " + chr(x) + " ", end="")
+    print()
+    for row in range(5):
+        print((row + 1), end=" ")
+        for col in range(5):
+            print(f" {game_map[row][col]}" + " | ", end="")
+        print("\n " + "----+" * 5)
 
 
 def ship_has_no_more_lives(game_map, x_axis, y_axis):
@@ -48,20 +84,7 @@ def display_current_player_turn(current_player_map, player_one_map):
         print("=== PLAYER 2 IS SHOOTING NOW ===")
 
 
-def shoot_at_coordinates(game_map, x_axis, y_axis):
-    if game_map[y_axis][x_axis] == representation_water_on_map:
-        game_map[y_axis][x_axis] = representation_miss_on_map
-        print("YOU HAVE MISSED.")
-        return
-    if game_map[y_axis][x_axis] == representation_intact_ship_on_map:
-        if ship_has_no_more_lives(game_map, x_axis, y_axis):
-            mark_whole_ship_as_dead(game_map, x_axis, y_axis)
-            print("YOU HAVE SUNK A SHIP")
-        else:
-            game_map[y_axis][x_axis] = representation_hit_ship_on_map
-            print("YOU HAVE HIT A SHIP")
-        return
-    print("YOU HAVE HIT A PLACE THAT WAS ALREADY HIT")
+
 
 
 
