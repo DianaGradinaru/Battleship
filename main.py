@@ -1,5 +1,5 @@
 from amir import create_map
-from mada import shoot_at_coordinates
+from mada import shoot_at_coordinates, mark_whole_ship_as_dead, ship_has_no_more_lives
 from diana import mark_ship_on_map, display_enemy_map
 from iulia import read_coordinates
 from madi import display_game_map, place_ships_on_map, ship_has_no_more_lives, has_lost
