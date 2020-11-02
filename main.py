@@ -1,5 +1,6 @@
 import random
-from amir import create_map, read_coordinates
+from amir import create_map
+from mada import shoot_at_coordinates
 
 # generating random numbers to place the ship
 # row = random.randint(0, 5)
@@ -109,20 +110,7 @@ def display_current_player_turn(current_player_map, player_one_map):
         print("=== PLAYER 2 IS SHOOTING NOW ===")
 
 
-def shoot_at_coordinates(game_map, x_axis, y_axis):
-    if game_map[y_axis][x_axis] == representation_water_on_map:
-        game_map[y_axis][x_axis] = representation_miss_on_map
-        print("YOU HAVE MISSED.")
-        return
-    if game_map[y_axis][x_axis] == representation_intact_ship_on_map:
-        if ship_has_no_more_lives(game_map, x_axis, y_axis):
-            mark_whole_ship_as_dead(game_map, x_axis, y_axis)
-            print("YOU HAVE SUNK A SHIP")
-        else:
-            game_map[y_axis][x_axis] = representation_hit_ship_on_map
-            print("YOU HAVE HIT A SHIP")
-        return
-    print("YOU HAVE HIT A PLACE THAT WAS ALREADY HIT")
+
 
 
 def display_enemy_map(game_map):
