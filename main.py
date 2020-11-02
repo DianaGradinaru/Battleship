@@ -1,6 +1,8 @@
 from amir import create_map
+from diana import mark_ship_on_map, display_enemy_map
 from iulia import read_coordinates
 from madi import display_game_map
+
 
 # generating random numbers to place the ship
 # row = random.randint(0, 5)
@@ -16,13 +18,7 @@ representation_intact_ship_on_map = 1
 representation_hit_ship_on_map = 2
 
 
-def mark_ship_on_map(game_map, ship, x_axis, y_axis):
-    for n in range(5):
-        if game_map[y_axis][x_axis] == representation_intact_ship_on_map:
-            print("That spot already has a battleship in it!")
 
-        game_map[y_axis][x_axis] = representation_intact_ship_on_map
-        return game_map
 
 
 def ship_has_no_more_lives(game_map, x_axis, y_axis):
@@ -67,19 +63,6 @@ def shoot_at_coordinates(game_map, x_axis, y_axis):
         return
     print("YOU HAVE HIT A PLACE THAT WAS ALREADY HIT")
 
-
-def display_enemy_map(game_map):
-    for row in game_map:
-        print("")
-        for cell in row:
-            if cell == representation_miss_on_map:
-                print("M", end="")
-            elif cell == representation_hit_ship_on_map:
-                print("H", end="")
-            elif cell == representation_intact_ship_on_map:
-                print("0", end="")
-            elif cell == representation_water_on_map:
-                print("0", end="")
 
 
 def has_lost(map):
