@@ -5,8 +5,11 @@ representation_miss_on_map = 3
 representation_ship_on_map = 1
 representation_hit_ship_on_map = 2
 
-
-
+def ship_has_no_more_lives(game_map, x_axis, y_axis):
+    if game_map[x_axis][y_axis-1] == representation_ship_on_map or game_map[x_axis][y_axis+1] == representation_ship_on_map:
+        return False    
+    else:
+        return True
 
 
 def mark_whole_ship_as_dead(game_map, x_axis, y_axis): 
