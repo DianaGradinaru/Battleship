@@ -6,6 +6,16 @@ representation_ship_on_map = 1
 representation_hit_ship_on_map = 2
 
 
+
+
+
+def mark_whole_ship_as_dead(game_map, x_axis, y_axis): 
+    if game_map[x_axis][y_axis] == representation_hit_ship_on_map:
+        return True
+    else:
+        return False 
+
+
 def shoot_at_coordinates(game_map, x_axis, y_axis):  
     if game_map[x_axis][y_axis] == representation_water_on_map:
         game_map[x_axis][y_axis] == representation_miss_on_map
@@ -27,6 +37,7 @@ game_map = [
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0]
 ]
-
+print("======")
+shoot_at_coordinates(game_map, 1, 2 )
 
 
