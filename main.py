@@ -1,13 +1,8 @@
 from amir import create_map
 from iulia import read_coordinates
-from madi import display_game_map
+from madi import display_game_map, place_ships_on_map, ship_has_no_more_lives, has_lost
 
-# generating random numbers to place the ship
-# row = random.randint(0, 5)
-# col = random.randint(0, 5)
-# # generating random location point for horizental and vertical
-# randomnumber = random.randint(0, 1)
-# letters and numbers for the table
+
 ships_for_player1 = [2, 1]
 ships_for_player2 = [2, 1]
 representation_water_on_map = 0
@@ -25,24 +20,9 @@ def mark_ship_on_map(game_map, ship, x_axis, y_axis):
         return game_map
 
 
-def ship_has_no_more_lives(game_map, x_axis, y_axis):
-
-    pass
-
-
 def mark_whole_ship_as_dead(game_map, x_axis, y_axis):
 
     pass
-
-
-def place_ships_on_map(ships):
-    game_map = create_map()
-    for ship in ships:
-        [x_axis, y_axis] = read_coordinates()
-
-        mark_ship_on_map(game_map, ship, x_axis, y_axis)
-        display_game_map(game_map)
-    return game_map
 
 
 def display_current_player_turn(current_player_map, player_one_map):
@@ -80,10 +60,6 @@ def display_enemy_map(game_map):
                 print("0", end="")
             elif cell == representation_water_on_map:
                 print("0", end="")
-
-
-def has_lost(map):
-    pass
 
 
 def start():
