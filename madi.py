@@ -1,5 +1,6 @@
 from amir import create_map
 from iulia import read_coordinates
+from diana import mark_ship_on_map
 
 
 def display_game_map(game_map):
