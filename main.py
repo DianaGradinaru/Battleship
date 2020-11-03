@@ -2,7 +2,7 @@ from amir import create_map
 from mada import shoot_at_coordinates, mark_whole_ship_as_dead, ship_has_no_more_lives
 from diana import mark_ship_on_map, display_enemy_map
 from iulia import read_coordinates
-from madi import display_game_map, place_ships_on_map, ship_has_no_more_lives, has_lost
+from madi import display_game_map, place_ships_on_map, has_lost
 
 
 ships_for_player1 = [2, 1]
@@ -32,6 +32,12 @@ def display_current_player_turn(current_player_map, player_one_map):
         print("=== PLAYER 1 IS SHOOTING NOW ===")
     else:
         print("=== PLAYER 2 IS SHOOTING NOW ===")
+
+
+def display_winner(shooting_player_map, map1)
+
+
+pass
 
 
 def start():
