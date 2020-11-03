@@ -23,10 +23,5 @@ def place_ships_on_map(ships):
     return game_map
 
 
-def ship_has_no_more_lives(game_map, x_axis, y_axis):
-
-    pass
-
-
 def has_lost(map):
     pass
