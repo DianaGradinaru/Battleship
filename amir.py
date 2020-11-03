@@ -1,3 +1,5 @@
+representation_water_on_map = 0
+
 def create_map():
     board = []
     for x in range(0, 5):
