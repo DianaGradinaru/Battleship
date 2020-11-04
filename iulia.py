@@ -79,6 +79,7 @@ def read_coordinates(board_size = 5):
     if inp[1] == 10: inp [0] = 9
     return inp[0], inp[1]
 
+print (read_coordinates())
 
 def display_winner():
     player1_ships = len(ships_for_player1)
