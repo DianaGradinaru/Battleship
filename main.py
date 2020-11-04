@@ -3,7 +3,7 @@ from mada import shoot_at_coordinates, mark_whole_ship_as_dead, ship_has_no_more
 from diana import mark_ship_on_map, display_enemy_map, mark_ship_on_map
 from iulia import read_coordinates, display_winner
 from madi import display_game_map, place_ships_on_map, has_lost
-
+import os 
 
 ships_for_player1 = [2, 1]
 ships_for_player2 = [2, 1]
@@ -11,6 +11,11 @@ representation_water_on_map = "0"
 representation_miss_on_map = "3"
 representation_intact_ship_on_map = "1"
 representation_hit_ship_on_map = "2"
+
+
+def clear():
+    func = 'clear' if os.uname().sysname == 'Linux' else 'cls'
+    os.system(func)
 
 
 def start():
@@ -39,5 +44,6 @@ def start():
 
 
 if __name__ == "__main__":
+    clear()
     start()
 
