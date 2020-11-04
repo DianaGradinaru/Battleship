@@ -1,4 +1,4 @@
-import main
+
 
 def create_map():
     board = []

@@ -1,11 +1,17 @@
+from diana import mark_ship_on_map
 from amir import create_map
 from iulia import read_coordinates
-from diana import mark_ship_on_map
+ships_for_player1 = [2,1]
+ships_for_player2 = [2,1]
+representation_water_on_map = "0" 
+representation_miss_on_map = "3"
+representation_ship_on_map = "1"
+representation_hit_ship_on_map = "2"
 
 
 def display_game_map(game_map):
     for x in range(65, 70):
-        print("  " + chr(x) + " ", end="")
+        print("  "+ chr(x)+ "  ", end="")
     print()
     for row in range(5):
         print((row + 1), end=" ")
@@ -24,7 +30,9 @@ def place_ships_on_map(ships):
     return game_map
 
 
-def has_lost(game_map, current_player_map):
-    # if sum(x.count('H') for x in game_map) == 3:
-    #     print("Congratulations player", current_player_map, "has won the game")
-    #     exit()
+def has_lost(enemy_map):
+    return True
+    
+#     # if sum(x.count('H') for x in game_map) == 3:
+#     #     print("Congratulations player", current_player_map, "has won the game")
+#     #     exit()
