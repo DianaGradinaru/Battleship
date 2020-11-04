@@ -24,5 +24,7 @@ def place_ships_on_map(ships):
     return game_map
 
 
-def has_lost(map):
-    pass
+def has_lost(game_map, current_player_map):
+    # if sum(x.count('H') for x in game_map) == 3:
+    #     print("Congratulations player", current_player_map, "has won the game")
+    #     exit()
