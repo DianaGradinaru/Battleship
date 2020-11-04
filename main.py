@@ -20,10 +20,9 @@ def display_current_player_turn(current_player_map, player_one_map):
         print("=== PLAYER 2 IS SHOOTING NOW ===")
 
 
-def display_winner(shooting_player_map, map1)
+def display_winner(shooting_player_map, map1):
 
-
-pass
+    pass
 
 
 def start():
