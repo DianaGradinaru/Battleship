@@ -68,11 +68,3 @@ def read_coordinates():
                     inp.append(char)
 
     return [rows.index(inp[0]), cols.index(inp[1])]
-
-def display_winner(ships_for_player1, ships_for_player2):
-    player1_ships = len(ships_for_player1)
-    player2_ships = len(ships_for_player2)
-    if player1_ships == 0:
-        return "Player 2 wins. Game over. "
-    if player2_ships == 0:
-        return "Player 1 wins. Game over. "

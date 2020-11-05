@@ -18,7 +18,8 @@ def mark_ship_on_map(game_map, ship, x_axis, y_axis):
 def display_enemy_map(game_map):
 
     for x in range(65, 70):
-        print("  " + chr(x) + "   ", end="")
+        print(" ", end="")
+        print("  " + chr(x) + " ", end="")
     print()
     for row in range(5):
         print((row + 1), end=" ")
