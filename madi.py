@@ -7,6 +7,7 @@ representation_water_on_map = "0"
 representation_miss_on_map = "3"
 representation_ship_on_map = "1"
 representation_hit_ship_on_map = "2"
+representation_sunk_ship_on_map = "4"
 
 
 def display_game_map(game_map):
@@ -31,7 +32,10 @@ def place_ships_on_map(ships):
 
 
 def has_lost(enemy_map):
-    return True
+    pass
+    # if [(sum(x.count('S') for x in enemy_map) == 2) or (sum(x.count('H') for x in enemy_map) == 2)]:
+    #     print("Congratulations player has won the game")
+    #     exit()
     
 #     # if sum(x.count('H') for x in game_map) == 3:
 #     #     print("Congratulations player", current_player_map, "has won the game")

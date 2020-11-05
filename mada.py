@@ -6,6 +6,7 @@ representation_water_on_map = "0"
 representation_miss_on_map = "3"
 representation_ship_on_map = "1"
 representation_hit_ship_on_map = "2"
+representation_sunk_ship_on_map = "4"
 
 
 def ship_has_no_more_lives(game_map, x_axis, y_axis):
@@ -16,10 +17,9 @@ def ship_has_no_more_lives(game_map, x_axis, y_axis):
 
 
 def mark_whole_ship_as_dead(game_map, x_axis, y_axis): 
-    if game_map[x_axis][y_axis] == representation_hit_ship_on_map:
-        return True
-    else:
-        return False 
+    game_map[x_axis][y_axis] = representation_sunk_ship_on_map
+
+
 
 
 def shoot_at_coordinates(game_map, x_axis, y_axis):  

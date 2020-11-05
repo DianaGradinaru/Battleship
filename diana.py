@@ -3,6 +3,7 @@ representation_water_on_map = "0"
 representation_miss_on_map = "3"
 representation_intact_ship_on_map = "1"
 representation_hit_ship_on_map = "2"
+representation_sunk_ship_on_map = "4"
 
 
 def mark_ship_on_map(game_map, ship, x_axis, y_axis):
