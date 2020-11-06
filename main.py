@@ -2,7 +2,7 @@ from amir import create_map, display_current_player_turn
 from mada import shoot_at_coordinates, mark_whole_ship_as_dead, ship_has_no_more_lives
 from diana import mark_ship_on_map, display_enemy_map, mark_ship_on_map
 from iulia import read_coordinates
-from madi import display_game_map, place_ships_on_map, has_lost
+from madi import display_game_map, place_ships_on_map, has_lost, loading, intro
 
 
 ships_for_player1 = [2, 1]
@@ -15,6 +15,9 @@ representation_sunk_ship_on_map = "4"
 
 
 def start():
+    loading()
+    intro()
+    print(" ")
     print("=== PLAYER 1 TURN TO PLACE SHIPS ON MAP ===")
     map1 = place_ships_on_map(ships_for_player1)
     print("=== PLAYER 2 TURN TO PLACE SHIPS ON MAP ===")
