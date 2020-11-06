@@ -32,7 +32,12 @@ def place_ships_on_map(ships):
 
 
 def has_lost(enemy_map):
-    pass
+    for sub_list in enemy_map:
+        for item in sub_list:
+            if representation_ship_on_map == item:
+                return True
+    return False
+
     # if [(sum(x.count('S') for x in enemy_map) == 2) or (sum(x.count('H') for x in enemy_map) == 2)]:
     #     print("Congratulations player has won the game")
     #     exit()
