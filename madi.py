@@ -65,19 +65,19 @@ def intro():
     l.append("               wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww                ")
     l.append("             wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww               ")
     l.append("                wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww                 ")
-    for i in range(1, len(l[0]) + 1):  # fly in from left animation
+    for i in range(1, len(l[0]) + 1):
         os.system("clear")
         for j in l:
             print(j[-i:])
-            time.sleep(0.003)  # slowing down
+            time.sleep(0.003)
 
     time.sleep(1)
     input("""
-                      +-++-++-++-++-+ +-++-++-++-++-+ +-++-+ +-++-++-++-++-+
-                      |P||R||E||S||S| |E||N||T||E||R| |T||O| |S||T||A||R||T|
-                      +-++-++-++-++-+ +-++-++-++-++-+ +-++-+ +-++-++-++-++-+""")
+                           +-++-++-++-++-+ +-++-++-++-++-+ +-++--+++
+                           |  P R E S S  E N T E R  T O  S T A R T  |
+                           +-++-++-++-++-+ +-++-++-++-++-+ ++-++-+++""")
 
-    for i in range(len(l[0])):  # flying out to the left
+    for i in range(len(l[0])):
         os.system("clear")
         for j in l:
             print(j[i:])
@@ -102,7 +102,9 @@ def place_ships_on_map(ships):
         [x_axis, y_axis] = read_coordinates()
 
         mark_ship_on_map(game_map, ship, x_axis, y_axis)
+        print("")
         display_game_map(game_map)
+        print("")
     return game_map
 
 

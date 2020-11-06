@@ -32,6 +32,7 @@ def shoot_at_coordinates(game_map, x_axis, y_axis):
         if ship_has_no_more_lives(game_map, x_axis, y_axis):
             mark_whole_ship_as_dead(game_map, x_axis, y_axis)
             print("You have sunk a ship!")
+            print("")
 
         else:
             game_map[x_axis][y_axis] == representation_hit_ship_on_map
